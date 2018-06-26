@@ -23,8 +23,6 @@ module Scripsit
 
     def parse_liquid(options)
       return unless options[:datas]
-      puts '#' * 10
-      puts options.inspect
       t = ::Liquid::Template.parse(@subject)
       @subject = t.render(options[:datas]).html_safe
       t = ::Liquid::Template.parse(@body)

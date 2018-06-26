@@ -21,6 +21,9 @@ Or install it yourself as:
 $ gem install scripsit
 ```
 
+## TODO:
+Add `reminder` class.
+
 ## Contributing
 Contribution directions go here.
 
