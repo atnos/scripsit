@@ -22,11 +22,11 @@ module Scripsit
     protected
 
     def parse_liquid(options)
-      return unless options[:datas]
+      return unless options[:data]
       t = ::Liquid::Template.parse(@subject)
-      @subject = t.render(options[:datas]).html_safe
+      @subject = t.render(options[:data]).html_safe
       t = ::Liquid::Template.parse(@body)
-      @body = t.render(options[:datas]).html_safe
+      @body = t.render(options[:data]).html_safe
     end
 
     def history(to, content_email, options)
@@ -34,7 +34,7 @@ module Scripsit
                      slug: content_email.scripsit_slug.slug,
                      to: to, subject: @subject, body: @body,
                      cc: options[:cc], bcc: options[:bcc],
-                     data: options[:datas])
+                     data: options[:data])
     end
 
     def sendmail(to, options)
