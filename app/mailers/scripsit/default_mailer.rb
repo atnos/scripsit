@@ -1,6 +1,7 @@
 module Scripsit
   class DefaultMailer < ApplicationMailer
     def prepare_email(to, slug, options = {})
+      return if to.blank?
       content_email = Content.joins(:scripsit_slug)
                              .where(scripsit_slugs: { slug: slug })
                              .where(active: true).first
