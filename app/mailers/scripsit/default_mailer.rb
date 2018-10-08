@@ -9,6 +9,9 @@ module Scripsit
       @subject = content_email.subject
       @body = content_email.body
 
+      # Processing attachments
+      parse_attachments(options)
+
       # Processing through Liquid gem
       parse_liquid(options)
 
@@ -28,6 +31,13 @@ module Scripsit
       @subject = t.render(options[:data]).html_safe
       t = ::Liquid::Template.parse(@body)
       @body = t.render(options[:data]).html_safe
+    end
+
+    def parse_attachments(options)
+      return unless options[:attachments].presence
+      options[:attachments].each do |name, attachment|
+        attachments[name] = attachment
+      end
     end
 
     def history(to, content_email, options)
