@@ -49,14 +49,16 @@ module Scripsit
     end
 
     def sendmail(to, options)
-      mail(
+      mail_params = {
         to: to,
         subject: (options[:subject_prefix] || '') + @subject,
         cc: options[:cc],
         bcc: options[:bcc],
         'reply-to': options[:'reply-to'],
         template_name: options[:template_name] ? options[:template_name] : 'default_email'
-      )
+      }
+      mail_params[:from] = options[:from] if options[:from].present?
+      mail mail_params
     end
   end
 end
