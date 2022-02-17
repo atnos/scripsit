@@ -4,7 +4,7 @@ PATH
     scripsit (0.3)
       liquid
       pg
-      rails (>= 6.0, < 7)
+      rails (>= 6.0)
 
 GEM
   remote: https://rubygems.org/
