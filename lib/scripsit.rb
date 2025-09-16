@@ -1,5 +1,5 @@
 require "scripsit/engine"
 
 module Scripsit
-  require 'liquid'
+  require "liquid"
 end

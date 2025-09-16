@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2018_05_10_093551) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_05_10_093551) do
     t.bigint "scripsit_slug_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["scripsit_slug_id"], name: "index_scripsit_contents_on_scripsit_slug_id"
+    t.index [ "scripsit_slug_id" ], name: "index_scripsit_contents_on_scripsit_slug_id"
   end
 
   create_table "scripsit_histories", force: :cascade do |t|
@@ -43,7 +42,7 @@ ActiveRecord::Schema.define(version: 2018_05_10_093551) do
     t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_scripsit_slugs_on_slug", unique: true
+    t.index [ "slug" ], name: "index_scripsit_slugs_on_slug", unique: true
   end
 
   add_foreign_key "scripsit_contents", "scripsit_slugs"
