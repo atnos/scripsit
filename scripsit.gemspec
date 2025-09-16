@@ -20,5 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", '>= 7.0'
   s.add_dependency "liquid"
   s.add_dependency "pg"
+  s.add_dependency "bundler-audit"
+  s.add_dependency "brakeman"
   s.add_dependency "rubocop-rails-omakase"
 end
