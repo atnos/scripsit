@@ -21,7 +21,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_16_101741) do
     t.bigint "scripsit_slug_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["scripsit_slug_id"], name: "index_scripsit_contents_on_scripsit_slug_id"
+    t.index [ "scripsit_slug_id" ], name: "index_scripsit_contents_on_scripsit_slug_id"
   end
 
   create_table "scripsit_histories", force: :cascade do |t|
@@ -42,7 +42,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_16_101741) do
     t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_scripsit_slugs_on_slug", unique: true
+    t.index [ "slug" ], name: "index_scripsit_slugs_on_slug", unique: true
   end
 
   add_foreign_key "scripsit_contents", "scripsit_slugs"
